@@ -1,0 +1,28 @@
+<h1>Posts Index</h1>
+
+<% @posts.each do |post| %>
+  <div class='row'>
+    <div class="col-sm-6 col-md-4"> 
+      <div class='thumbnail'>
+        <!-- <img src="<%= post.image.url %>"> -->
+        </div>
+      <h2> <%=link_to post.title, post%> </h2>
+      <p>Posted <%=time_ago_in_words(post.created_at)%> ago, by <%=post.user.username%></p>
+      
+      <p> Tags:
+      <% post.tags.each do |tag| %>
+      <%= link_to tag.keyword, tag_path(tag) %>
+      <% end %>
+      </p>
+
+      <p> <%= link_to 'X', post_path(post), method: :delete, class: 'ui button', data: {confirm: "Are you sure you want to do this?"} if post.user == current_user %></p>
+    <%end%>
+    </div>
+  </div>
+
+<%# <div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="..." alt="...">
+    </a>
+  </div> %>

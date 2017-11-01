@@ -1,0 +1,13 @@
+<h3>Edit Comment:</h3>
+<%= form_for @comment, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+  <%= f.text_area :comment, size: "40x8" %>
+  <%= f.submit "Update" %>
+  
+<% end %>
+
+<h1>Edit Post</h1>
+
+
+
+
+<%= link_to 'Never mind, return to post', post_path(@post) %>
