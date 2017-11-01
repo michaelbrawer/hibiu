@@ -33,18 +33,23 @@
   </nav>
 
     <%= yield %>
-    <p>
+    <button class="btn btn-secondary">
   <% if current_user %>
     Welcome, <%= current_user.username %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
+    </button>
+    <button class = 'btn btn-secondary'>
     <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+    </button>
   <% else %>
     <%= link_to 'Log In', login_path %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
+    <button class ="btn btn-secondary">
     <%= link_to 'Sign Up', new_user_path %>
   <% end %>
-</p>
+</button>
+<button class ='btn btn-alert'>
 <%= link_to 'Create a Post', new_post_path %>
+</button>
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
