@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    render :show
+    render 'charles/show'
   end
 
   def tag_params
