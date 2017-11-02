@@ -3,15 +3,16 @@
 Inspired by Stack Overflow, it's a Rails App For Fixing Things... 
 ----
 ### Core Technologies Used:
--Ruby on Rails
--HTML
--CSS
+- Ruby on Rails
+- HTML
+- CSS
 
 ### Additional Libraries / Frameworks / Gems-Of-Note
--Bootstrap for styling & mobile responsiveness
--jQuery - makes Bootstrap go
--Paperclip - for Rails image-file handling
--Amazon S3 / Heroku for hosting & deployment
+- Bootstrap for styling & mobile responsiveness
+- jQuery - makes Bootstrap go
+- Paperclip - for Rails image-file handling
+- Lightbox2 - for show-view image thumbnails & enlargement
+- Amazon S3 / Heroku for hosting & deployment
 
 ----
 
