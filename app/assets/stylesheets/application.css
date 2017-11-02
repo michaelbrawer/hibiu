@@ -20,9 +20,7 @@ body {
   margin-right: 20px;
 }
 
-.container {
-  color: green;
-}
+
 
 h4 {
   color: orange;
@@ -75,7 +73,7 @@ h2 {
 #content{
   margin-top: 40px;
   margin-bottom: 60px;
-  background-color: blue;
+  background-color: purple;
 }
 
 #brand {
@@ -94,6 +92,3 @@ h2 {
   color: orange;
 }
 
-p {
-  color: purple;
-}
