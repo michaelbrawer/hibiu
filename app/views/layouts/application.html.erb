@@ -7,22 +7,23 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.js" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.js" crossorigin="anonymous"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
   
   
+
+  <div id="content">
+        <%= yield %>
+      </div>
   
-  <div class="">
-    
-        <h4>Help, I Blew It Up</h4>
-        
-      <nav >
-        <div class="btn-group btn-group">
+  
+      
+        <div class="btn-group btn-group-vertical">
           <button class="btn btn-secondary">
             <% if current_user %>
             Welcome, <%= current_user.username %>
@@ -41,12 +42,10 @@
             <%= link_to 'Create a Post', new_post_path %>
           </button>
         </div>
-      </nav>
       
-      <div id="content">
-        <%= yield %>
-      </div>
-    </div>
+      
+      
+    
   
 
   </body>
