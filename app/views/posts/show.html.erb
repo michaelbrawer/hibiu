@@ -4,9 +4,13 @@
 <%= link_to 'Home', root_path %>
 </button>
 </h1>
-<div class ='postImage'>
-<%= image_tag @post.image.url %>
-</div>
+
+<a href="<%=@post.image.url%>" data-lightbox="<%=@post.title %>">
+<img src="<%=@post.image.url%>" width='100' alt="<%=@post.title%>">
+</a>
+
+<!-- <%= image_tag @post.image.url %> -->
+
 <p><%=@post.content%></p>
 
 <p> Tags:</p>
