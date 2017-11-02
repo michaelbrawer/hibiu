@@ -17,7 +17,7 @@ Inspired by Stack Overflow, it's a Rails App For Fixing Things...
 
 ### Getting Started
 
-![Click Here For Deployed App](https://guarded-plateau-81226.herokuapp.com/)
+[Click Here For Deployed App](https://guarded-plateau-81226.herokuapp.com/)
 
 ----
 
@@ -30,7 +30,7 @@ Inspired by Stack Overflow, it's a Rails App For Fixing Things...
 
 ### App Development
 
-![Trello Board](https://trello.com/b/E82z0aFH/hibiu)
+[Trello Board](https://trello.com/b/E82z0aFH/hibiu)
 
 Initial Wireframes:
 
