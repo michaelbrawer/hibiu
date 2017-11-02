@@ -1,4 +1,3 @@
-<h1>post show route</h1>
 
 <h1><%=@post.title%></h1>
 <div class ='postImage'>
@@ -15,7 +14,7 @@
 <%# section for comments %>
 <h2><%=@post.comments.count%> Comments:</h2>
 <% @post.comments.each do |c| %>
-  <p><%= c.user.username%> : <%=c.comment %> <%= link_to 'X', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user || current_user.username == "livefreela" %></p>
+  <p><%= c.user.username%> : <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user || current_user.username == "livefreela" %></button></p>
 <% end %>
 
 
