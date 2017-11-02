@@ -22,7 +22,7 @@
 <%# section for comments %>
 <h4><%=@post.comments.count%> Comments</h4>
 <% @post.comments.each do |c| %>
-  <p><strong><%= c.user.username%> : </strong> <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user %></button></p>
+  <p><strong><%= c.user.username%> : </strong> <%=c.comment %></p>
 <%if c.user == current_user %>
 <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' %></button>
 <% end %>
