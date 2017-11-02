@@ -1,18 +1,15 @@
+<%# index of posts w. matching tag %>
 <div>
-<h2 class="postTitle">Articles Tagged with <%= @tag.keyword %> :</h2>
-
-<div class="showPost">
-  <% @tag.posts.each do |post| %>
+  <h2 class="postTitle">Articles Tagged with <%= @tag.keyword %> :</h2>
+  <div class="showPost">
+    <% @tag.posts.each do |post| %>
     <h4><%= link_to post.title, post_path(post) %></h4>
-  <% end %>
+    <% end %>
   </div>
-
   <br>
-
-
-<button class = 'btn btn-warning'>
-<%= link_to 'Home', root_path %>
-</button>
-
+  <%# return home %>
+  <button class = 'btn btn-warning'>
+    <%= link_to 'Home', root_path %>
+  </button>
 </div>
 
