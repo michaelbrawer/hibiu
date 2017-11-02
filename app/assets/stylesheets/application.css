@@ -19,3 +19,20 @@
 img {
   max-width: 300px;
 }
+
+.indexPost {
+  outline: 2px solid black;
+  max-width: 400px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+}

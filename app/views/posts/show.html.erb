@@ -1,5 +1,9 @@
 
-<h1><%=@post.title%></h1>
+<h1><%=@post.title%>
+<button class = 'btn btn-warning'>
+<%= link_to 'Home', root_path %>
+</button>
+</h1>
 <div class ='postImage'>
 <%= image_tag @post.image.url %>
 </div>
@@ -11,12 +15,13 @@
     <%= link_to tag.keyword, tag_path(tag) %>
     </button>
   <% end %>
-
+  
+</p>
 
 <%# section for comments %>
 <h4><%=@post.comments.count%> Comments:</h4>
 <% @post.comments.each do |c| %>
-  <p><strong><%= c.user.username%> : </strong> <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user || current_user.username == "livefreela" %></button></p>
+  <p><strong><%= c.user.username%> : </strong> <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user %></button></p>
 <% end %>
 
 <h3>reply to thread</h3>

@@ -1,7 +1,9 @@
 
 <container>
+
 <% @posts.each do |post| %>
-  <div class=''>
+
+  <div class='indexPost'>
 
         <!-- <img src="<%= post.image.url %>"> -->
         
@@ -17,8 +19,16 @@
       
 
       <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Post', post_path(post), method: :delete, class: 'ui button', data: {confirm: "Are you sure you want to do this?"} if post.user == current_user %></button>
-    <%end%>
+    
     
   </div>
+  
+  <%end%>
+  
 </container>
-
+<%# <div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="..." alt="...">
+    </a>
+  </div> %>
