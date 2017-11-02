@@ -1,9 +1,5 @@
 
-<h1><%=@post.title%>
-<button class = 'btn btn-warning'>
-<%= link_to 'Home', root_path %>
-</button>
-</h1>
+<h1><%=@post.title%></h1>
 
 <a href="<%=@post.image.url%>" data-lightbox="<%=@post.title %>">
 <img src="<%=@post.image.url%>" width='200' alt="<%=@post.title%>">
