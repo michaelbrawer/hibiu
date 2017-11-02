@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hibiu</title>
-    <%= csrf_meta_tags %>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-<nav class="navbar navbar-header">
-
-  <ul class="nav nav-pills">
-  <li role="presentation" class="active">
-  <% if current_user %>
-    Welcome, <%= current_user.username %>
-    
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-    </li>
-    <li role="presentation">
-    <% else %>
-    <%= link_to 'Log In', login_path %>
-    <%= link_to 'Sign Up', new_user_path %>
-    <%end%>
-  </li>
-  <li role="presentation">
-  
-  </li>
-  
-  </ul>
-  </nav>
-
-    <%= yield %>
-    <button class="btn btn-secondary">
-  <% if current_user %>
-    Welcome, <%= current_user.username %>
-    </button>
-    <button class = 'btn btn-secondary'>
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-    </button>
-  <% else %>
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <button class ="btn btn-secondary">
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</button>
-<button class ='btn btn-alert'>
-<%= link_to 'Create a Post', new_post_path %>
-</button>
+<head>
+  <title>Hibiu</title>
+  <%= csrf_meta_tags %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   
-  </body>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-dark bg-dark">
+    <h1>
+      Help, I Blew It Up
+    </h1>
+  </nav>
+  
+  <%= yield %>
+  <button class="btn btn-secondary">
+    <% if current_user %>
+    Welcome, <%= current_user.username %>
+  </button>
+  <button class = 'btn btn-secondary'>
+    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+  </button>
+  <% else %>
+  <%= link_to 'Log In', login_path %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <button class ="btn btn-secondary">
+    <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
+  </button>
+  <button class ='btn btn-alert'>
+    <%= link_to 'Create a Post', new_post_path %>
+  </button>
+  
+  
+</body>
 </html>
