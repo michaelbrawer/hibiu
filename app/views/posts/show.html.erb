@@ -17,7 +17,7 @@
     </button>
   <% end %>
   
-</p>
+<%# </p> %>
 
 <%# section for comments %>
 <h4><%=@post.comments.count%> Comments</h4>
@@ -34,6 +34,7 @@
   <%end%>
 <% end %>
 
+<%# Post Modification Functionality %>
 <h4>Modify Post:</h4>
 <button class='btn btn-secondary'><%= link_to 'Edit', edit_post_path(@post) if @post.user == current_user%></button>
 <button class='btn btn-secondary'><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to do this?"} if @post.user == current_user%></button>
