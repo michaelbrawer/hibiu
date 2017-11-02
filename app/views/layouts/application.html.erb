@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hibiu</title>
-  
+  <title>A Rails App For Fixing Things</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -15,7 +14,7 @@
 </head>
 
 <body>
- 
+  
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -27,11 +26,9 @@
         <a id="brand" class="navbar-brand" href="/">Help, I Blew It Up!!!</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        
         <ul class="nav navbar-nav">
           
-          <li><% if current_user %>
-          </li>
+          <% if current_user %>
           <li>
             <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
           </li>
@@ -43,29 +40,23 @@
             <%= link_to 'Sign Up', new_user_path %>
             <% end %>
           </li>
-          <li><%= link_to 'Create a Post', new_post_path %></li>
+          <li><%= link_to 'Create a Post', new_post_path %>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   
- 
-  
-  
   <div id="content">
     <%= yield %>
   </div>
   
-  
-
-  <nav class="footer text-center navbar navbar-inverse navbar-bottom">
-  <div class="container-fluid">
-     <p class="copyright">Copyright 2017</p>
-    <p class="message">Created with &hearts; by <span class="name">GA/MCB</span></p>
+  <nav class="footer text-center navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="copyright">Copyright 2017</p>
+      <p class="message">Created with &hearts; by <span class="name">GA/MCB</span></p>
     </div>
-    </nav>
-   
+  </nav>
   
- 
 </body>
 </html>
