@@ -23,7 +23,11 @@
 <h4><%=@post.comments.count%> Comments</h4>
 <% @post.comments.each do |c| %>
   <p><strong><%= c.user.username%> : </strong> <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user %></button></p>
+<%if c.user == current_user %>
+<button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' %></button>
 <% end %>
+<% end %>
+
 
 <br>
 <%# modify Post functionality if original poster %>
@@ -34,21 +38,24 @@
 <%end%>
 </div>
 
-<div class='showPost'>
 <%if current_user%>
+<div class='showPost'>
+
 <h3>Reply To Thread:</h3>
 <%= form_for [@post, @comment], html: {class: "nifty_form"} do |f| %>
   <%= f.text_area :comment, size: "40x8" %>
   <br>
   <%= f.submit "Create" %>
   <%end%>
+  </div>
 <% end %>
 
 
-</div>
+
 <br>
 <button class = 'btn btn-warning'>
 <%= link_to 'Home', root_path %>
 </button>
+<br>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.js" crossorigin="anonymous" defer></script>
