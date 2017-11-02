@@ -20,7 +20,6 @@
           <%if current_user == post.user%>
           <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Post', post_path(post), method: :delete, class: 'ui button', data: {confirm: "Are you sure you want to do this?"} %></button>
           <%end%>
-          
         </div>
       </div>
     </div>

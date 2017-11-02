@@ -1,63 +1,50 @@
-
+<%# post header %>
 <h1 class="postTitle"><%=@post.title%></h1>
-
 <a href="<%=@post.image.url%>" data-lightbox="<%=@post.title %>">
-<img src="<%=@post.image.url%>" width='200' alt="<%=@post.title%>">
+  <img src="<%=@post.image.url%>" width='200' alt="<%=@post.title%>">
 </a>
-
+<%# post content %>
 <div class="showPost">
-<!-- <%= image_tag @post.image.url %> -->
-
-<p><%=@post.content%></p>
-
-<p> Tags:</p>
-<% @post.tags.each do |tag| %>
-<button class ="btn btn-warning btn-xs">
+  <p><%=@post.content%></p>
+  <p> Tags:</p>
+  <% @post.tags.each do |tag| %>
+  <button class ="btn btn-warning btn-xs">
     <%= link_to tag.keyword, tag_path(tag) %>
-    </button>
+  </button>
   <% end %>
-  
-</p>
-
-<%# section for comments %>
-<h4><%=@post.comments.count%> Comments</h4>
-<% @post.comments.each do |c| %>
+  <%# section for comments %>
+  <h4><%=@post.comments.count%> Comments</h4>
+  <% @post.comments.each do |c| %>
   <p><strong><%= c.user.username%> : </strong> 
-  <%=c.comment %>
-  (<%=time_ago_in_words(@post.created_at)%> ago...)
+    <%=c.comment %>
+    (<%=time_ago_in_words(@post.created_at)%> ago...)
+    <%if c.user == current_user %>
+    <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' %></button>
+    <% end %>
+    <% end %>
   </p>
-<%if c.user == current_user %>
-<button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' %></button>
-<% end %>
-<% end %>
-
-
-<br>
-<%# modify Post functionality if original poster %>
-<%if @post.user == current_user%>
-<h4>Modify Post</h4>
-<button class='btn btn-secondary'><%= link_to 'Edit', edit_post_path(@post)%></button>
-<button class='btn btn-secondary'><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to do this?"}%></button>
-<%end%>
+  <%# modify Post functionality if original poster %>
+  <%if @post.user == current_user%>
+  <h4>Modify Post</h4>
+  <button class='btn btn-secondary'><%= link_to 'Edit', edit_post_path(@post)%></button>
+  <button class='btn btn-secondary'><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to do this?"}%></button>
+  <%end%>
 </div>
-
+<%# comment reply functionality %>
 <%if current_user%>
 <div class='showPost'>
-
-<h3>Reply To Thread:</h3>
-<%= form_for [@post, @comment], html: {class: "nifty_form"} do |f| %>
+  <h3>Reply To Thread:</h3>
+  <%= form_for [@post, @comment], html: {class: "nifty_form"} do |f| %>
   <%= f.text_area :comment, size: "40x8" %>
   <br>
   <%= f.submit "Create" %>
   <%end%>
-  </div>
+</div>
 <% end %>
-
-
-
+<%# return home %>
 <br>
 <button class = 'btn btn-warning'>
-<%= link_to 'Home', root_path %>
+  <%= link_to 'Home', root_path %>
 </button>
 <br>
 
