@@ -8,7 +8,7 @@
         <!-- <img src="<%= post.image.url %>"> -->
         
       <h2> <%=link_to post.title, post%> </h2>
-      <p>Posted <%=time_ago_in_words(post.created_at)%> ago, by <%=post.user.username%></p>
+      <p>Posted <%=time_ago_in_words(post.created_at)%> ago, by <strong><%=post.user.username%></strong></p>
       
 
       <% post.tags.each do |tag| %>
