@@ -1,6 +1,34 @@
 
 <container>
 
+
+
+<div class="row">
+<% @posts.each do |post| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+    <h3> <%=link_to post.title, post%> </h3>
+      <img src="<%=post.image.url%>" alt="...">
+      <div class="caption">
+      
+        <p>Posted <%=time_ago_in_words(post.created_at)%> ago, by <strong><%=post.user.username%></strong></p>
+       
+       <% post.tags.each do |tag| %>
+      <button class = 'btn btn-warning btn-xs'>
+      <%= link_to tag.keyword, tag_path(tag) %>
+       </button>
+       <% end %>
+       <%if current_user == post.user%>
+      <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Post', post_path(post), method: :delete, class: 'ui button', data: {confirm: "Are you sure you want to do this?"} %></button>
+      <%end%>
+
+      </div>
+    </div>
+  </div>
+  <%end%>
+</div>
+
+
 <% @posts.each do |post| %>
 
   <div class='indexPost'>
