@@ -5,18 +5,19 @@
 </div>
 <p><%=@post.content%></p>
 
-<p> Tags:
+<p> Tags:</p>
 <% @post.tags.each do |tag| %>
+<button class ="btn btn-warning btn-xs">
     <%= link_to tag.keyword, tag_path(tag) %>
+    </button>
   <% end %>
-</p>
+
 
 <%# section for comments %>
-<h2><%=@post.comments.count%> Comments:</h2>
+<h4><%=@post.comments.count%> Comments:</h4>
 <% @post.comments.each do |c| %>
-  <p><%= c.user.username%> : <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user || current_user.username == "livefreela" %></button></p>
+  <p><strong><%= c.user.username%> : </strong> <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user || current_user.username == "livefreela" %></button></p>
 <% end %>
-
 
 <h3>reply to thread</h3>
 <%= form_for [@post, @comment], html: {class: "nifty_form"} do |f| %>
@@ -24,8 +25,6 @@
   <%= f.submit "Create" %>
   
 <% end %>
-
-
 
 <%= link_to 'Home', root_path %>
 <%= link_to 'Edit', edit_post_path(@post)%>
