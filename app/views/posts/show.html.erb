@@ -1,7 +1,9 @@
 <h1>post show route</h1>
 
 <h1><%=@post.title%></h1>
+<div class ='postImage'>
 <%= image_tag @post.image.url %>
+</div>
 <p><%=@post.content%></p>
 
 <p> Tags:
