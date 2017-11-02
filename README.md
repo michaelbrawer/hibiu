@@ -17,9 +17,22 @@ Inspired by Stack Overflow, it's a Rails App For Fixing Things...
 
 ### Getting Started
 
-Add Link Here
+![Click Here For Deployed App](https://guarded-plateau-81226.herokuapp.com/)
 
----- 
+----
+
+### Next Steps / Planned Features
+
+- Implementing an upvote / downvote feature
+
+- Implementing board search functionality
+
+
+### App Development
+
+![Trello Board](https://trello.com/b/E82z0aFH/hibiu)
+
+Initial Wireframes:
 
 * ERD Sketch
 ![ERD Sketch](https://i.imgur.com/1yN8IFd.jpg)
