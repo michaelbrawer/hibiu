@@ -1,11 +1,11 @@
 
-<h1><%=@post.title%></h1>
+<h1 class="postTitle"><%=@post.title%></h1>
 
 <a href="<%=@post.image.url%>" data-lightbox="<%=@post.title %>">
 <img src="<%=@post.image.url%>" width='200' alt="<%=@post.title%>">
 </a>
 
-
+<div class="showPost">
 <!-- <%= image_tag @post.image.url %> -->
 
 <p><%=@post.content%></p>
@@ -25,6 +25,16 @@
   <p><strong><%= c.user.username%> : </strong> <%=c.comment %> <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' if c.user == current_user %></button></p>
 <% end %>
 
+<br>
+<%# modify Post functionality if original poster %>
+<%if @post.user == current_user%>
+<h4>Modify Post</h4>
+<button class='btn btn-secondary'><%= link_to 'Edit', edit_post_path(@post)%></button>
+<button class='btn btn-secondary'><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to do this?"}%></button>
+<%end%>
+</div>
+
+<div class='showPost'>
 <%if current_user%>
 <h3>Reply To Thread:</h3>
 <%= form_for [@post, @comment], html: {class: "nifty_form"} do |f| %>
@@ -33,12 +43,8 @@
   <%= f.submit "Create" %>
   <%end%>
 <% end %>
-<br>
-<%# modify Post functionality if original poster %>
-<%if @post.user == current_user%>
-<h4>Modify Post</h4>
-<button class='btn btn-secondary'><%= link_to 'Edit', edit_post_path(@post)%></button>
-<button class='btn btn-secondary'><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to do this?"}%></button>
-<%end%>
+
+
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.js" crossorigin="anonymous" defer></script>

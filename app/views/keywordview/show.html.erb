@@ -1,11 +1,12 @@
 <div>
-<h1>Articles Tagged with <%= @tag.keyword %></h1>
+<h2 class="postTitle">Articles Tagged with <%= @tag.keyword %> :</h2>
 
-<ul>
+<div class="showPost">
   <% @tag.posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
+    <h4><%= link_to post.title, post_path(post) %></h4>
   <% end %>
-</ul>
+  </div>
+
 
 <button class = 'btn btn-warning'>
 <%= link_to 'Home', root_path %>

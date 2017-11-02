@@ -16,12 +16,17 @@
 
 body {
   background-color: grey;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h4 {
+  color: orange;
 }
 
 img {
   max-width: 300px;
+  border-radius: 10px;
 }
 
 div .indexPost {
@@ -55,15 +60,31 @@ h2 {
 }
 
 .footer {
-  background-color: black;
   color: white;
-  margin-top: 10px;
 }
 
-.navbar-inverse{
+
+/* .navbar-inverse{
   border-radius: none;
-}
+} */
 
 #content{
   margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+#brand {
+  color: orange;
+}
+
+.showPost {
+  margin-top: 10px;
+  background-color: white;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.postTitle {
+  color: orange;
 }
