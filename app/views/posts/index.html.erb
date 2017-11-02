@@ -1,7 +1,11 @@
 
 <container>
 
-
+ <h3 id='welcome'><% if current_user %> 
+   Welcome:
+    <%= current_user.username %>
+    <% end%>
+  </h3>
 
 <div class="row flex">
 <% @posts.each do |post| %>
@@ -29,30 +33,7 @@
 </div>
 
 
-<% @posts.each do |post| %>
 
-  <div class='indexPost'>
-
-        <!-- <img src="<%= post.image.url %>"> -->
-        
-      <h2> <%=link_to post.title, post%> </h2>
-      <p>Posted <%=time_ago_in_words(post.created_at)%> ago, by <strong><%=post.user.username%></strong></p>
-      
-
-      <% post.tags.each do |tag| %>
-      <button class = 'btn btn-warning btn-xs'>
-      <%= link_to tag.keyword, tag_path(tag) %>
-       </button>
-       <% end %>
-      
-      <%if current_user == post.user%>
-      <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Post', post_path(post), method: :delete, class: 'ui button', data: {confirm: "Are you sure you want to do this?"} %></button>
-      <%end%>
-    
-  </div>
-  
-  <%end%>
-  
 </container>
 <%# <div class="row">
   <div class="col-xs-6 col-md-3">
