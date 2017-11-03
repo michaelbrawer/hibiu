@@ -2,6 +2,8 @@
 
 Inspired by Stack Overflow, it's a Rails App For Fixing Things... 
 ----
+![screenshot](https://i.imgur.com/pjogJHU.png)
+----
 ### Core Technologies Used:
 - Ruby on Rails
 - HTML
