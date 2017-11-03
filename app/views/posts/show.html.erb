@@ -17,7 +17,7 @@
   <% @post.comments.each do |c| %>
   <p><strong><%= c.user.username%> : </strong> 
     <%=c.comment %>
-    (<%=time_ago_in_words(@post.created_at)%> ago...)
+    <!--(<%=time_ago_in_words(@post.created_at)%> ago...)-->
     <%if c.user == current_user %>
     <button class="btn btn-danger btn-xs"> <%= link_to 'Delete Comment', comment_path(c), method: :delete, class: 'ui button' %></button>
     <% end %>
