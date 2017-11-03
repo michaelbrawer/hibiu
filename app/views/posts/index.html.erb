@@ -2,6 +2,8 @@
   <h3 id='welcome'><% if current_user %> 
     Welcome:
     <%= current_user.username %>
+    <%else%>
+    A Rails App For Fixing Things.
     <% end%>
   </h3>
   <div class="row flex">
