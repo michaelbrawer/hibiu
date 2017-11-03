@@ -1,6 +1,6 @@
 <%# post header %>
 <h1 class="postTitle"><%=@post.title%></h1>
-<a href="<%=@post.image.url%>" data-lightbox="<%=@post.title %>">
+<a class='clickLink' href="<%=@post.image.url%>" data-lightbox="<%=@post.title %>">
   <img src="<%=@post.image.url%>" width='200' alt="<%=@post.title%>">
   <br>
   Click To Enlarge
