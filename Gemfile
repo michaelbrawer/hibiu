@@ -34,7 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem "aws-sdk", "~> 2"
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.2.0"
 gem "figaro"
 
 group :development, :test do
